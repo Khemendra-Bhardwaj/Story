@@ -1,0 +1,88 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define mod 1000000007
+using namespace std;
+
+
+
+int main(){
+
+// int t;
+// cin>>t;
+// while(t--){
+// ll x,y,n;
+// cin>>x>>y>>n;
+
+// if(n%6==1){
+  
+// }
+// cout<<-2%mod<<endl;
+
+// }
+
+// }
+
+
+// 1) program for merge sort which perform follwing task
+// a) take integers to sorted as input from user 
+//  perfrom merge sort over : enter integer
+//  show the complete list of integer obtained during 
+// each split at merge operation
+
+// 2) program for 
+// a take string as input 
+// b print substring as well as their length which are 
+//  aplhabetically sorted
+//  c print thr aplhabetically sorted hightst length
+// d if no aplahabeticaaly sorted subsrting then print this message
+
+string s;
+cin>>s;
+
+deque<string> v;
+vector<int> v_size;
+for(int i=0;i<s.size();i++){
+  string temp="";
+  for(int j=i;j<s.size()-1;j++){
+    temp = s.substr(i,j+1);
+    v.push_back(temp);
+    v_size.push_back(temp.size());
+  }
+}
+/*sort(v.begin(),v.end());
+for(int i=0;i<v.size();i++){
+  // cout<<it<<endl
+  cout<<"String"<<" "<<"Length"<<endl;
+  cout<<v[i]<<" "<<v_size[i]<<endl;
+}*/
+v.pop_front();
+// for(auto it :dq){
+//   cout<<it<<endl;
+// }/*
+int mx = 0;
+for(int i=0;i<v.size();i++){
+  string empty=v[i];
+  sort(empty.begin(),empty.end());
+  if(empty == v[i]){
+    cout<<empty<<" "<<empty.size()<<endl;
+    mx = max(mx, int(empty.size()) );
+  }
+}
+bool flag = false;
+for(int i=0;i<v.size();i++){
+  string temp = v[i];
+  sort(temp.begin(),temp.end());
+  if(temp.size()==mx){
+    if(temp == v[i] ){
+      flag = true;
+      cout<<temp<<endl; 
+    }
+  }
+}
+if(!flag){
+  cout<<"not present"<<endl;
+}
+
+
+}
+// adalab158@gmail.cpm
